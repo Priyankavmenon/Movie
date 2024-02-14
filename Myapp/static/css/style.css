@@ -1,0 +1,25 @@
+.gform,.logform,.regform ,.mform{
+    background-color: rgb(250, 232, 211);
+    border: 2px solid black;
+    padding: 30px;
+    margin-top: 70px;
+    
+    margin-bottom: 500px;
+    place-items: center;
+    display: grid;
+    height: 800;
+font-size: large;
+font-weight: bold;
+
+}
+
+button{width:100px;margin-top: 15px;font-size: large;
+    font-weight: bold;
+    }
+.nav{background-color: rgb(147, 192, 194);font-size: larger;font-weight: bold;font-family: 'Times New Roman', Times, serif;
+    }
+    .wnav{margin-top:5px;font-size: larger;font-weight: bold;font-family: 'Times New Roman', Times, serif;
+    }
+    h3{margin-top: 100px;}
+.gtable,.mtable,td,th,thead,tr{margin-top: 80px; border:2px black solid;
+}

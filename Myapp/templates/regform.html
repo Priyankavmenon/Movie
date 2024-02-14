@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<form class="regform" action="" method="post">
+    {%csrf_token%}
+    {{rf}}
+    <button type="submit">Register</button>
+</form>
+{% for i in messages %}
+<div class="alert alert-secondary" role="alert">
+    {{i}}
+  </div>
+  {% endfor %}
+{% endblock %}

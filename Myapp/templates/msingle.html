@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<!-- <form class="gform" action="" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+<h3>Title={{s.title}}</h3>
+<h3><br> genre={{s.genre}}</h3>
+</form>  -->
+
+<table class="mform table" action="" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    
+    <tr>
+       
+        <td>{{s.title}}</td>
+
+        <td>{% if s.image %}<img src="{{s.image.url}}" class="img-responsive" width="50%">{% endif %}</td>
+
+        <td>{{s.date}}</td>
+        <td>{{s.duration}}</td>
+        <td>{{s.summary}}</td>
+        <td>{{s.genre}}</td>
+        </tr>
+</table> 
+{% for i in messages %}
+<div class="alert alert-secondary" role="alert">
+    {{i}}
+  </div>
+  {% endfor %}
+{% endblock %}

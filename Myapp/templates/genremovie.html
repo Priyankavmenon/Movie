@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<table class="gtable table" action="" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    <thead>
+        
+        <th>Title</th>
+        <th>Image</th>
+        
+        <th>Movie Overview</th>
+        <th>Genre</th>
+        
+        
+
+
+    </thead>
+    
+    <tr>
+        {% for i in m  %}
+        <td>{{i.title}}</td>
+
+        <td>{% if i.image %}<img src="{{i.image.url}}" class="img-responsive" width="50%">{% endif %}</td>
+        <td>{{i.summary}}</td>
+        
+        {% endfor %}
+        
+        <td>{{g.genrename}}</td>
+       
+        
+              
+          </tr>
+    
+    
+    
+   
+
+</table>
+
+
+{% for i in messages %}
+<div class="alert alert-secondary" role="alert">
+    {{i}}
+  </div>
+  {% endfor %}
+{% endblock %}

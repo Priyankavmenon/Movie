@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<form class="logform" action="" method="post">
+    {%csrf_token%}
+    {{lf}}
+    <button type="submit">Login</button>
+</form>
+{% for i in messages %}
+<div class="alert alert-secondary" role="alert">
+    {{i}}
+  </div>
+  {% endfor %}
+{% endblock %}

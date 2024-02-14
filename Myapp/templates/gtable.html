@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<h3>Welcome {{request.user}}</h3>
+<table class="gtable table" action="" method="post">
+    {%csrf_token%}
+    <thead>
+        <th>ID</th>
+        <th>Genre Name</th>
+        <th>Description</th>
+        <th>View</th>
+        <th>Movies</th>
+        
+        <th>Edit</th>
+        <th>Delete</th>
+        
+    </thead>
+    {% for i in d %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.genrename}}</td>
+        <td>{{i.description}}</td>
+        <td><a class="btn btn btn-outline-primary" href="{% url 'single' i.id %}">View</a></td>
+        <td><a class="btn btn btn-outline-primary" href="{% url 'genremovie' i.id %}">View movies</a></td>
+
+        <td><a class="btn btn btn-outline-primary" href="{% url 'gedit' i.id %}">Edit</a></td>
+        <td><a class="btn btn btn-outline-primary" href="{% url 'delete' i.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+    
+</table>
+
+{% endblock %}
